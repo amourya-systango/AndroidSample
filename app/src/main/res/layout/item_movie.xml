@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.example.samplemovieapp.data.model.MovieData" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                app:imageUrl="@{movie.poster}" />
+
+            <TextView
+                android:id="@+id/text_view_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/image_view"
+                android:layout_toRightOf="@+id/image_view"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{movie.title}"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_view_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_view_title"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/image_view"
+                android:layout_toRightOf="@+id/image_view"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:text="@{movie.summary}" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
